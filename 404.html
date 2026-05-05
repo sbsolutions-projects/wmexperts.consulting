@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found | WMexperts.consulting</title>
+    <meta name="description" content="The page you're looking for couldn't be found.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a href="/index.html" class="logo">WM<span class="logo-secondary">experts.consulting</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <a href="/index.html">Home</a>
+                <a href="/profile.html">Profile</a>
+                <a href="/services.html">Services</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="notfound">
+            <div class="code">404</div>
+            <h1>Page not found</h1>
+            <p>
+                The page you're looking for doesn't exist on this site — or it has moved.
+                Pick a destination below, or head back to the homepage.
+            </p>
+            <div class="btn-row">
+                <a href="/index.html" class="btn btn-primary">Back to Home</a>
+                <a href="/services.html" class="btn btn-secondary">See Services</a>
+            </div>
+            <p style="margin-top: 2.5rem; font-size: 0.95rem;">
+                Looking for SAP EWM articles or tutorials?
+                Visit <a href="https://wmexperts.online" target="_blank" rel="noopener">wmexperts.online</a>.
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="/index.html">Home</a>
+                <a href="/profile.html">Profile</a>
+                <a href="/services.html">Services</a>
+                <a href="/contact.html">Contact</a>
+                <a href="https://wmexperts.online" target="_blank" rel="noopener">wmexperts.online</a>
+                <a href="https://www.linkedin.com/in/hendrik-schulte-bahrenberg-9a415339/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="footer-meta">
+                <span>© 2026 Hendrik Schulte-Bahrenberg · SAP EWM MFS Consultant</span>
+                <a href="/imprint.html">Imprint</a>
+                <a href="/privacy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <p>This site uses Google Analytics to understand visitor behaviour. Nothing is loaded until you accept. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        <div class="cookie-actions">
+            <button class="decline" onclick="declineCookies()">Decline</button>
+            <button class="accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('mainNav');
+            if (!toggle || !nav) return;
+            toggle.addEventListener('click', function () {
+                const open = toggle.classList.toggle('open');
+                nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+
+        const GA_ID = 'G-XXXXXXXXXX';
+        function loadGA() {
+            if (GA_ID === 'G-XXXXXXXXXX' || !GA_ID) return;
+            const s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', GA_ID, { anonymize_ip: true });
+        }
+        function acceptCookies() {
+            localStorage.setItem('wmc-cookie-consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            loadGA();
+        }
+        function declineCookies() {
+            localStorage.setItem('wmc-cookie-consent', 'declined');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            const consent = localStorage.getItem('wmc-cookie-consent');
+            const banner = document.getElementById('cookie-banner');
+            if (!consent) {
+                banner.classList.add('show');
+            } else if (consent === 'accepted') {
+                loadGA();
+            }
+        });
+    </script>
+
+</body>
+</html>

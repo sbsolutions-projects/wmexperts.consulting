@@ -1,0 +1,831 @@
+/* ==========================================================================
+   wmexperts.consulting — Master Stylesheet
+   Brand-aligned with wmexperts.online (same colour & type system)
+   ========================================================================== */
+
+/* 1. Variables ---------------------------------------------------------- */
+:root {
+    --sap-blue:        #005597;
+    --sap-blue-light:  #0066B3;
+    --sap-blue-dark:   #003E6F;
+    --bg-page:         #F5F7FA;
+    --bg-card:         #FFFFFF;
+    --bg-light:        #F9FAFB;
+    --text-dark:       #111827;
+    --text-muted:      #6B7280;
+    --text-light:      #9CA3AF;
+    --border:          #E5E7EB;
+    --accent:          #EEF6FC;
+    --shadow-sm:       0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md:       0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg:       0 12px 24px rgba(0,85,151,0.10);
+    --radius-sm:       6px;
+    --radius-md:       10px;
+    --radius-lg:       12px;
+    --radius-xl:       16px;
+}
+
+/* 2. Reset & Base ------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-page);
+    background: linear-gradient(180deg,
+        rgba(0, 85, 151, 0.08) 0%,
+        rgba(0, 85, 151, 0.04) 25%,
+        transparent 60%);
+    color: var(--text-muted);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main { flex: 1; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* 3. Typography --------------------------------------------------------- */
+h1, h2, h3, h4 {
+    color: var(--text-dark);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+h1 { font-size: 3rem; letter-spacing: -1.5px; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.25rem; }
+a  { color: var(--sap-blue); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--sap-blue-light); }
+strong { color: var(--text-dark); }
+
+/* 4. Header & Navigation ----------------------------------------------- */
+header.site-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+.nav-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.25rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--sap-blue);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+}
+.logo .logo-secondary { color: var(--text-dark); font-weight: 600; }
+nav.main-nav { display: flex; align-items: center; gap: 2.25rem; }
+nav.main-nav a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .2s;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active { color: var(--sap-blue); }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    margin: 5px 0;
+    transition: .3s;
+}
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 5. Section & Container ----------------------------------------------- */
+section { padding: 4rem 8%; }
+section.tinted {
+    background: var(--bg-light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.container { max-width: 1280px; margin: 0 auto; }
+.section-head { max-width: 800px; margin: 0 auto 3rem; text-align: center; }
+.section-head h2 { margin-bottom: 0.75rem; }
+.section-head .eyebrow {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--sap-blue);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: 1px solid rgba(0,85,151,0.15);
+    margin-bottom: 1rem;
+}
+.section-head p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 6. Hero --------------------------------------------------------------- */
+.hero {
+    padding: 5rem 8% 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hero .eyebrow {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--sap-blue);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0,85,151,0.15);
+}
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.05;
+    max-width: 900px;
+}
+.hero h1 .accent { color: var(--sap-blue); }
+.hero .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
+    max-width: 720px;
+}
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* 7. Buttons ------------------------------------------------------------ */
+.btn {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .2s;
+    text-align: center;
+    line-height: 1.2;
+}
+.btn-primary {
+    background: var(--sap-blue);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,85,151,0.18);
+}
+.btn-primary:hover {
+    background: var(--sap-blue-light);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,85,151,0.28);
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--sap-blue);
+    border-color: var(--sap-blue);
+}
+.btn-secondary:hover {
+    background: var(--sap-blue);
+    color: #fff;
+    transform: translateY(-2px);
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    padding: 14px 0;
+    font-weight: 500;
+}
+.btn-ghost:hover { color: var(--sap-blue); }
+
+/* 8. Service Cards (Home overview) ------------------------------------- */
+.service-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sap-blue);
+    box-shadow: var(--shadow-lg);
+}
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+}
+.service-icon svg { display: block; }
+.service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-dark);
+}
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 1.25rem;
+}
+.service-card .more {
+    color: var(--sap-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* 9. Profile section ---------------------------------------------------- */
+.profile-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+.profile-image-wrap {
+    position: sticky;
+    top: 110px;
+}
+.profile-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--accent) 0%, #DCEBF6 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+.profile-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sap-blue);
+    letter-spacing: 0.3px;
+}
+.profile-bio h1 { margin-bottom: 1.5rem; font-size: 2.6rem; }
+.profile-bio .lead-quote {
+    border-left: 3px solid var(--sap-blue);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-weight: 300;
+}
+.profile-bio p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+/* 10. Skill Tags -------------------------------------------------------- */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.75rem 0 2rem;
+}
+.skill-tag {
+    background: var(--accent);
+    color: var(--sap-blue);
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0,85,151,0.15);
+}
+.skill-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+/* 11. Service detail (Services page) ----------------------------------- */
+.service-detail {
+    max-width: 820px;
+    margin: 0 auto 2rem;
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    scroll-margin-top: 100px;
+}
+.service-detail .head {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.service-detail .icon-inline {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.service-detail .icon-inline svg { display: block; }
+.service-detail h2 {
+    font-size: 1.6rem;
+    margin: 0 0 0.25rem;
+}
+.service-detail .for-whom {
+    font-size: 0.78rem;
+    color: var(--sap-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.service-detail p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.service-detail h4 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--sap-blue);
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+.service-detail ul { padding-left: 1.4rem; margin: 0.5rem 0 1rem; }
+.service-detail li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+.service-detail li::marker { color: var(--sap-blue); }
+
+/* 12. Contact ----------------------------------------------------------- */
+.contact-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-decoration: none;
+    transition: all .2s;
+    display: block;
+}
+.contact-card:hover {
+    border-color: var(--sap-blue);
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+.contact-card .label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+.contact-card .value {
+    color: var(--sap-blue);
+    font-weight: 600;
+    font-size: 1.05rem;
+    word-break: break-word;
+    margin-bottom: 0.4rem;
+}
+.contact-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+.contact-note {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding: 1.25rem;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+}
+
+/* 13. CTA block --------------------------------------------------------- */
+.cta-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--sap-blue) 0%, var(--sap-blue-light) 100%);
+    color: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,85,151,0.18);
+}
+.cta-block h2 { color: #fff; margin-bottom: 0.75rem; }
+.cta-block p {
+    color: rgba(255,255,255,0.92);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-block .btn-primary {
+    background: #fff;
+    color: var(--sap-blue);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.cta-block .btn-primary:hover {
+    background: var(--bg-light);
+    color: var(--sap-blue-dark);
+}
+
+/* 13b. CTA subtle (dezent) --------------------------------------------- */
+.cta-subtle {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--sap-blue);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.cta-subtle-text { flex: 1; min-width: 220px; }
+.cta-subtle h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.2px;
+}
+.cta-subtle p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.55;
+}
+.cta-subtle .btn {
+    padding: 11px 22px;
+    font-size: 0.92rem;
+    flex-shrink: 0;
+}
+
+/* 14. Cross-link to wmexperts.online ----------------------------------- */
+.cross-link-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+.online-link-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    transition: all .2s;
+}
+.online-link-card:hover {
+    border-color: var(--sap-blue);
+    transform: translateY(-2px);
+}
+.online-link-card .icon-large {
+    font-size: 1.6rem;
+    width: 52px;
+    height: 52px;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.online-link-card .icon-large svg { display: block; }
+.online-link-card .text { flex: 1; min-width: 220px; }
+.online-link-card h3 {
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+.online-link-card p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+.online-link-card .arrow {
+    color: var(--sap-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* 15. Legal pages (privacy, imprint) ----------------------------------- */
+.legal-content {
+    max-width: 800px;
+    margin: 3rem auto 4rem;
+    padding: 0 8%;
+}
+.legal-content h1 { margin-bottom: 0.5rem; font-size: 2.4rem; }
+.legal-content .updated {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+.legal-content h2 {
+    font-size: 1.3rem;
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+.legal-content h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+}
+.legal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    font-size: 1rem;
+}
+.legal-content ul { padding-left: 1.5rem; margin: 0.75rem 0 1.25rem; }
+.legal-content li { margin-bottom: 0.45rem; line-height: 1.65; }
+.legal-content code {
+    font-family: 'Courier New', monospace;
+    background: var(--accent);
+    color: var(--sap-blue);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.legal-content .placeholder-note {
+    background: #FFF8E1;
+    border-left: 4px solid #F59E0B;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    color: #78350F;
+    font-size: 0.92rem;
+}
+
+/* 16. References (placeholder) ----------------------------------------- */
+.refs-empty {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 3rem 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+.refs-empty .icon-large {
+    font-size: 2.4rem;
+    width: 72px;
+    height: 72px;
+    background: var(--accent);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+.refs-empty h2 { margin-bottom: 1rem; font-size: 1.6rem; }
+.refs-empty p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
+}
+
+/* 17. 404 --------------------------------------------------------------- */
+.notfound {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 0 5%;
+    text-align: center;
+}
+.notfound .code {
+    font-size: 7rem;
+    font-weight: 800;
+    color: var(--sap-blue);
+    line-height: 1;
+    letter-spacing: -4px;
+    background: linear-gradient(135deg, var(--sap-blue) 0%, var(--sap-blue-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.notfound h1 { font-size: 2rem; margin: 1rem 0 0.75rem; }
+.notfound p { font-size: 1.05rem; margin-bottom: 2rem; }
+.notfound .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* 18. Footer ------------------------------------------------------------ */
+footer.site-footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 8% 2rem;
+    margin-top: auto;
+    text-align: center;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer-links a:hover { color: var(--sap-blue); }
+.footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+.footer-meta a { color: var(--text-light); }
+.footer-meta a:hover { color: var(--sap-blue); }
+
+/* 19. Cookie Banner ----------------------------------------------------- */
+#cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 8%;
+    z-index: 9999;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+#cookie-banner.show {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+#cookie-banner p {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    flex: 1;
+    min-width: 280px;
+    margin: 0;
+    line-height: 1.5;
+}
+#cookie-banner .cookie-actions { display: flex; gap: 0.75rem; }
+#cookie-banner button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .2s;
+}
+#cookie-banner .accept {
+    background: var(--sap-blue);
+    color: #fff;
+    border-color: var(--sap-blue);
+}
+#cookie-banner .accept:hover { background: var(--sap-blue-light); border-color: var(--sap-blue-light); }
+#cookie-banner .decline {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-muted);
+}
+#cookie-banner .decline:hover { border-color: var(--text-muted); color: var(--text-dark); }
+
+/* 20. Responsive -------------------------------------------------------- */
+@media (max-width: 900px) {
+    .profile-section { grid-template-columns: 1fr; gap: 2rem; }
+    .profile-image-wrap { position: static; max-width: 320px; margin: 0 auto; width: 100%; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.6rem; }
+    .cross-link-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav-wrap { padding: 1rem 5%; }
+    .menu-toggle { display: block; }
+    nav.main-nav {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--bg-card);
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+    }
+    nav.main-nav.open { display: flex; }
+    nav.main-nav a {
+        padding: 0.85rem 5%;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+    }
+    nav.main-nav a:last-child { border-bottom: none; }
+
+    .hero { padding: 3rem 5% 2.5rem; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero .lead { font-size: 1.02rem; }
+    section { padding: 3rem 5%; }
+    h2 { font-size: 1.55rem; }
+    .profile-bio h1 { font-size: 2rem; }
+
+    .cta-block { padding: 2rem 1.5rem; }
+    .cta-subtle { padding: 1.25rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .cta-subtle .btn { width: 100%; text-align: center; }
+    .legal-content { padding: 0 5%; margin: 2rem auto 3rem; }
+    .legal-content h1 { font-size: 1.9rem; }
+    .online-link-card { padding: 1.5rem; }
+    .service-detail { padding: 1.75rem; }
+    footer.site-footer { padding: 2rem 5% 1.5rem; }
+    #cookie-banner { padding: 1rem 5%; }
+    #cookie-banner.show { flex-direction: column; align-items: stretch; }
+    #cookie-banner .cookie-actions { justify-content: center; }
+    .notfound { margin: 3rem auto; }
+    .notfound .code { font-size: 5rem; }
+}

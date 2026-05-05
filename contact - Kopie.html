@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | WMexperts.consulting</title>
+    <meta name="description" content="Get in touch with Hendrik Schulte-Bahrenberg — freelance SAP EWM and MFS consultant. Email or LinkedIn, response within 24 hours.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hendrik Schulte-Bahrenberg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wmexperts.consulting/contact.html">
+    <meta property="og:title" content="Contact | WMexperts.consulting">
+    <meta property="og:description" content="Get in touch with Hendrik Schulte-Bahrenberg — freelance SAP EWM and MFS consultant.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact | WMexperts.consulting">
+    <meta name="twitter:description" content="Get in touch with Hendrik Schulte-Bahrenberg — freelance SAP EWM and MFS consultant.">
+
+    <link rel="canonical" href="https://wmexperts.consulting/contact.html">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a href="/index.html" class="logo">WM<span class="logo-secondary">experts.consulting</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <a href="/index.html">Home</a>
+                <a href="/profile.html">Profile</a>
+                <a href="/services.html">Services</a>
+                <a href="/contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===================== HEADER ===================== -->
+        <section style="padding-bottom: 2rem;">
+            <div class="section-head" style="margin-bottom: 2.5rem;">
+                <span class="eyebrow">Contact</span>
+                <h2>Let's talk!</h2>
+                <p>Tell me about your project, your team, or your training need!</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <a href="mailto:hsb@wmexperts.consulting" class="contact-card">
+                    <div class="label">Email</div>
+                    <div class="value">hsb@wmexperts.consulting</div>
+                    <p>For project enquiries, training requests, or anything else.</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/hendrik-schulte-bahrenberg-9a415339/" target="_blank" rel="noopener" class="contact-card">
+                    <div class="label">LinkedIn</div>
+                    <div class="value">Hendrik</div>
+                    <p>Connect, message, or follow my updates on EWM and MFS topics.</p>
+                </a>
+
+            </div>
+
+            <p class="contact-note">
+                I usually respond within 24 hours on business days. For trainings, please include the
+                approximate team size, target audience, and preferred dates if you already have them.
+            </p>
+        </section>
+
+        <!-- ===================== CROSS-LINK ===================== -->
+        <section>
+            <a href="https://wmexperts.online" class="online-link-card" target="_blank" rel="noopener">
+                <div class="icon-large">📚</div>
+                <div class="text">
+                    <h3>Looking for SAP EWM knowledge content?</h3>
+                    <p>Visit <strong>WMexperts.online</strong> for in-depth articles, tutorials, the YouTube channel, and the #MFSMAP reference model.</p>
+                </div>
+                <span class="arrow">WMexperts.online →</span>
+            </a>
+        </section>
+
+        <!-- ===================== BACK TO SERVICES ===================== -->
+        <section style="text-align: center; padding-top: 1rem;">
+            <a href="/services.html" class="btn btn-secondary">← Back to Services</a>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="/index.html">Home</a>
+                <a href="/profile.html">Profile</a>
+                <a href="/services.html">Services</a>
+                <a href="/contact.html">Contact</a>
+                <a href="https://wmexperts.online" target="_blank" rel="noopener">wmexperts.online</a>
+                <a href="https://www.linkedin.com/in/hendrik-schulte-bahrenberg-9a415339/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="footer-meta">
+                <span>© 2026 Hendrik Schulte-Bahrenberg · SAP EWM MFS Consultant</span>
+                <a href="/imprint.html">Imprint</a>
+                <a href="/privacy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <p>This site uses Google Analytics to understand visitor behaviour. Nothing is loaded until you accept. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        <div class="cookie-actions">
+            <button class="decline" onclick="declineCookies()">Decline</button>
+            <button class="accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('mainNav');
+            if (!toggle || !nav) return;
+            toggle.addEventListener('click', function () {
+                const open = toggle.classList.toggle('open');
+                nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+
+        const GA_ID = 'G-XXXXXXXXXX';
+        function loadGA() {
+            if (GA_ID === 'G-XXXXXXXXXX' || !GA_ID) return;
+            const s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', GA_ID, { anonymize_ip: true });
+        }
+        function acceptCookies() {
+            localStorage.setItem('wmc-cookie-consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            loadGA();
+        }
+        function declineCookies() {
+            localStorage.setItem('wmc-cookie-consent', 'declined');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            const consent = localStorage.getItem('wmc-cookie-consent');
+            const banner = document.getElementById('cookie-banner');
+            if (!consent) {
+                banner.classList.add('show');
+            } else if (consent === 'accepted') {
+                loadGA();
+            }
+        });
+    </script>
+
+</body>
+</html>
