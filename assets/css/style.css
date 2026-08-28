@@ -78,13 +78,13 @@ header.site-header {
     position: relative;
 }
 .logo {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--sap-blue);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
     text-decoration: none;
-    letter-spacing: -0.3px;
+    letter-spacing: 0;
 }
-.logo .logo-secondary { color: var(--text-dark); font-weight: 600; }
+.logo .logo-secondary { color: inherit; font-weight: inherit; }
 nav.main-nav { display: flex; align-items: center; gap: 2.25rem; }
 nav.main-nav a {
     color: var(--text-muted);
@@ -95,6 +95,30 @@ nav.main-nav a {
 }
 nav.main-nav a:hover,
 nav.main-nav a.active { color: var(--sap-blue); }
+
+.language-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding-left: 0.25rem;
+    border-left: 1px solid var(--border);
+}
+.language-switch a {
+    padding: 0.2rem 0.35rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+.language-switch a:hover,
+.language-switch a.active {
+    color: var(--sap-blue);
+    background: var(--accent);
+}
+.language-switch .divider {
+    color: var(--text-light);
+    font-size: 0.78rem;
+}
 
 .menu-toggle {
     display: none;
@@ -148,9 +172,16 @@ section.tinted {
 /* 6. Hero --------------------------------------------------------------- */
 .hero {
     padding: 5rem 8% 4rem;
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
 }
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+    gap: 3.5rem;
+    align-items: center;
+}
+.hero-copy { min-width: 0; }
 .hero .eyebrow {
     display: inline-block;
     background: var(--accent);
@@ -185,6 +216,44 @@ section.tinted {
     flex-wrap: wrap;
     align-items: center;
 }
+
+/* Homepage portrait block: remove this section and the index-de.html aside to revert. */
+.hero-portrait {
+    justify-self: end;
+    width: 100%;
+    max-width: 320px;
+}
+.hero-portrait img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 60% 48%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+.hero-portrait-caption {
+    display: grid;
+    gap: 0.3rem;
+    padding-top: 0.9rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+.hero-portrait-caption strong {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+}
+.hero-portrait-caption a {
+    width: max-content;
+    margin-top: 0.2rem;
+    color: var(--sap-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+.hero-portrait-caption a:hover { text-decoration: underline; }
+/* End homepage portrait block. */
 
 /* 7. Buttons ------------------------------------------------------------ */
 .btn {
@@ -783,6 +852,8 @@ footer.site-footer {
     .profile-section { grid-template-columns: 1fr; gap: 2rem; }
     .profile-image-wrap { position: static; max-width: 320px; margin: 0 auto; width: 100%; }
     .contact-grid { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-portrait { justify-self: start; max-width: 300px; }
     .hero h1 { font-size: 2.6rem; }
     .cross-link-grid { grid-template-columns: 1fr; }
 }
@@ -807,6 +878,17 @@ footer.site-footer {
         border-bottom: 1px solid var(--border);
     }
     nav.main-nav a:last-child { border-bottom: none; }
+    .language-switch {
+        width: 100%;
+        padding: 0.65rem 5% 0.25rem;
+        border-left: none;
+        justify-content: flex-start;
+    }
+    .language-switch a {
+        width: auto;
+        padding: 0.35rem 0.5rem;
+        border-bottom: none;
+    }
 
     .hero { padding: 3rem 5% 2.5rem; }
     .hero h1 { font-size: 2.1rem; }

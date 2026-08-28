@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Preview | WMexperts.consulting</title>
+    <link rel="stylesheet" href="./assets/fonts/inter.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body { background: var(--bg-light); }
+        .preview-main { max-width: 1280px; margin: 0 auto; padding: 3rem 8%; }
+        .preview-main h1 { margin-bottom: 0.75rem; }
+        .preview-main > p { color: var(--text-muted); max-width: 720px; }
+        .preview-stack { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+        .preview-option { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .preview-label { padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .preview-option header.site-header { position: static; box-shadow: none; }
+        .logo-preview-a { color: var(--text-muted); font-weight: 500; letter-spacing: 0; }
+        .logo-preview-a .logo-secondary { color: inherit; font-weight: inherit; }
+        .logo-preview-b { color: var(--text-muted); font-weight: 400; letter-spacing: 0; }
+        .logo-preview-b .logo-secondary { color: inherit; font-weight: inherit; }
+        .logo-preview-c { color: var(--text-dark); font-weight: 500; letter-spacing: 0; }
+        .logo-preview-c .logo-secondary { color: inherit; font-weight: inherit; }
+    </style>
+</head>
+<body>
+    <main class="preview-main">
+        <span class="eyebrow">Header-Vorschau</span>
+        <h1>WMexperts.consulting im Header</h1>
+        <p>Drei ruhige Varianten im aktuellen Header-Layout. Mein Favorit ist Variante A: sichtbar, aber nicht logo-lastig.</p>
+
+        <div class="preview-stack">
+            <section class="preview-option">
+                <div class="preview-label">Variante A - grauer Absender, mittleres Gewicht</div>
+                <header class="site-header">
+                    <div class="nav-wrap">
+                        <a href="./index-de.html" class="logo logo-preview-a">WM<span class="logo-secondary">experts.consulting</span></a>
+                        <nav class="main-nav" aria-label="Hauptnavigation">
+                            <a href="./index-de.html" class="active">Start</a>
+                            <a href="./profile-de.html">Profil</a>
+                            <a href="./services-de.html">Leistungen</a>
+                            <a href="./contact-de.html">Kontakt</a>
+                        </nav>
+                    </div>
+                </header>
+            </section>
+
+            <section class="preview-option">
+                <div class="preview-label">Variante B - sehr dezent, gleichrangig mit Navigation</div>
+                <header class="site-header">
+                    <div class="nav-wrap">
+                        <a href="./index-de.html" class="logo logo-preview-b">WM<span class="logo-secondary">experts.consulting</span></a>
+                        <nav class="main-nav" aria-label="Hauptnavigation">
+                            <a href="./index-de.html" class="active">Start</a>
+                            <a href="./profile-de.html">Profil</a>
+                            <a href="./services-de.html">Leistungen</a>
+                            <a href="./contact-de.html">Kontakt</a>
+                        </nav>
+                    </div>
+                </header>
+            </section>
+
+            <section class="preview-option">
+                <div class="preview-label">Variante C - etwas mehr Präsenz, aber ohne Blau</div>
+                <header class="site-header">
+                    <div class="nav-wrap">
+                        <a href="./index-de.html" class="logo logo-preview-c">WM<span class="logo-secondary">experts.consulting</span></a>
+                        <nav class="main-nav" aria-label="Hauptnavigation">
+                            <a href="./index-de.html" class="active">Start</a>
+                            <a href="./profile-de.html">Profil</a>
+                            <a href="./services-de.html">Leistungen</a>
+                            <a href="./contact-de.html">Kontakt</a>
+                        </nav>
+                    </div>
+                </header>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
